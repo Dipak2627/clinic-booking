@@ -1,0 +1,10 @@
+# Local MongoDB for development and for running the tests against a real server:
+#   docker compose up -d
+#   TEST_MONGODB_URI=mongodb://127.0.0.1:27017/clinic_booking_test npm test --prefix server
+services:
+  mongo:
+    image: mongo:7
+    ports: ["27017:27017"]
+    volumes: [mongo-data:/data/db]
+volumes:
+  mongo-data:
